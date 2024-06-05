@@ -31,6 +31,14 @@ leadDelete.findElement(By.xpath("//span[text()='Name and ID']")).click();//name 
 leadDelete.findElement(By.name("id")).sendKeys("11964");//Search
 leadDelete.findElement(By.xpath("//button[text()='Find Leads']")).click();//Click Find leads
 
+String message = leadDelete.findElement(By.xpath("//div[@class='x-paging-info']")).getText();
+if (message.equals("No records to display")) {
+	System.out.println("Lead deleted successfully");
+} else {
+	System.out.println("Lead not deleted");
+}
+
+leadDelete.close();
 
 
 	}
